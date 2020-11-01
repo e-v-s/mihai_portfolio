@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/mihai_portfolio/static/js/main.a55b2e7b.chunk.js",
-    "main.js.map": "/mihai_portfolio/static/js/main.a55b2e7b.chunk.js.map",
-    "runtime-main.js": "/mihai_portfolio/static/js/runtime-main.879bdfd2.js",
-    "runtime-main.js.map": "/mihai_portfolio/static/js/runtime-main.879bdfd2.js.map",
-    "static/css/2.ab77c0f9.chunk.css": "/mihai_portfolio/static/css/2.ab77c0f9.chunk.css",
-    "static/js/2.ca97fded.chunk.js": "/mihai_portfolio/static/js/2.ca97fded.chunk.js",
-    "static/js/2.ca97fded.chunk.js.map": "/mihai_portfolio/static/js/2.ca97fded.chunk.js.map",
-    "index.html": "/mihai_portfolio/index.html",
-    "static/css/2.ab77c0f9.chunk.css.map": "/mihai_portfolio/static/css/2.ab77c0f9.chunk.css.map",
-    "static/js/2.ca97fded.chunk.js.LICENSE.txt": "/mihai_portfolio/static/js/2.ca97fded.chunk.js.LICENSE.txt",
-    "static/media/logo.52a6577b.png": "/mihai_portfolio/static/media/logo.52a6577b.png",
-    "static/media/utcn.540e6e1f.png": "/mihai_portfolio/static/media/utcn.540e6e1f.png"
+    "main.js": "/mihai_portfolio/build/static/js/main.a55b2e7b.chunk.js",
+    "main.js.map": "/mihai_portfolio/build/static/js/main.a55b2e7b.chunk.js.map",
+    "runtime-main.js": "/mihai_portfolio/build/static/js/runtime-main.5a1855ac.js",
+    "runtime-main.js.map": "/mihai_portfolio/build/static/js/runtime-main.5a1855ac.js.map",
+    "static/css/2.ab77c0f9.chunk.css": "/mihai_portfolio/build/static/css/2.ab77c0f9.chunk.css",
+    "static/js/2.ca97fded.chunk.js": "/mihai_portfolio/build/static/js/2.ca97fded.chunk.js",
+    "static/js/2.ca97fded.chunk.js.map": "/mihai_portfolio/build/static/js/2.ca97fded.chunk.js.map",
+    "index.html": "/mihai_portfolio/build/index.html",
+    "static/css/2.ab77c0f9.chunk.css.map": "/mihai_portfolio/build/static/css/2.ab77c0f9.chunk.css.map",
+    "static/js/2.ca97fded.chunk.js.LICENSE.txt": "/mihai_portfolio/build/static/js/2.ca97fded.chunk.js.LICENSE.txt",
+    "static/media/logo.52a6577b.png": "/mihai_portfolio/build/static/media/logo.52a6577b.png",
+    "static/media/utcn.540e6e1f.png": "/mihai_portfolio/build/static/media/utcn.540e6e1f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.879bdfd2.js",
+    "static/js/runtime-main.5a1855ac.js",
     "static/css/2.ab77c0f9.chunk.css",
     "static/js/2.ca97fded.chunk.js",
     "static/js/main.a55b2e7b.chunk.js"
