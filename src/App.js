@@ -135,7 +135,7 @@ function App() {
                   className={css(style.links)} 
                   onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
                 >
-                  Costumers
+                  Custumers
                 </a>
               </li>
               <li 
@@ -223,7 +223,7 @@ function App() {
                 className={css(style.links)} 
                 onClick={() => setPage('Solutions')}
               >
-                Costumers
+                Custumers
               </a>              
             </li>
             <li onClick={toggleContactModal}>
