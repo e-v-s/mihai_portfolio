@@ -18,6 +18,7 @@ import Work from './pages/work.js';
 import About from './pages/about.js';
 import Contact from './pages/contact.js';
 import Solutions from './pages/solutions.js';
+import Home from './pages/home.js';
 
 import burgerIcon from './images/menuBurger.png';
 import burgerIconClose from './images/closeMenuBurger.png';
@@ -48,13 +49,11 @@ function App() {
   }, []);
 
   const handleClick = (e) => {
-    if (e.target.id !== 'work') {
-      setChangeStyle(true);
+    if (e.target.id === 'solutions') {
+      showDropdown ? setShowDropdown(false) : setShowDropdown(true);
+    } else {      
       setPage(e.target.id);
       setShowDropdown(true);
-    } else {
-      
-      showDropdown ? setShowDropdown(false) : setShowDropdown(true);
     }
   }
 
@@ -70,6 +69,12 @@ function App() {
 
   const handleBurger = () => {
     showBurger ? setShowBurger(false) : setShowBurger(true);
+  }
+
+  const handleSolutionsType = (e) => {
+    setShowDropdown(false);
+    // setCurricula(e.target.id);
+    setPage('solutions');
   }
 
   return (
@@ -105,22 +110,23 @@ function App() {
           
         </section> 
         <section className={windowScroll ? css(style.newHeader) : css(style.header)}>
-          <Header onClick={(e) => {setPage('about'); handleSubMenu(e)}} onScroll={ windowScroll ? css(style.onScroll) : css(style.headerDescription)} onScrollLogo={windowScroll ? css(style.onScrollLogo) : css(style.headerTitle)} />
+          <Header onClick={(e) => {setPage('home'); handleSubMenu(e)}} onScroll={ windowScroll ? css(style.onScroll) : css(style.headerDescription)} onScrollLogo={windowScroll ? css(style.onScrollLogo) : css(style.headerTitle)} />
           <ul className={css(style.menu)}>
             <li>
               <a id='about' className={css(style.links)} onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false)}}>About</a>
             </li>
             <li>
-              <a id='work' className={css(style.links)} onClick={(e) => {handleClick(e)}} onMouseOver={() => {showDropdown ? setShowDropdown(false) : setShowDropdown(true)}} onMouseOut={() => setShowDropdown(false)}>Work
+              <a id='work' className={css(style.links)} onClick={() => setPage('work')}>Work
               </a>              
-              <ul onMouseOver={() => setShowDropdown(true)} onMouseOut={() => setShowDropdown(false)} className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
-                <li className={css(style.linksDropdown)} id="experience" onClick={(e) => handleWorkType(e)}>Experience</li>
-                <li className={css(style.linksDropdown)} id="academic" onClick={(e) => {handleWorkType(e)}}>Academic formation</li>
-                <li className={css(style.linksDropdown)} id="courses" onClick={(e) => {handleWorkType(e)}}>Courses</li>
-              </ul>
             </li>
             <li>
-              <a className={css(style.links)} onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false)}}>Solutions</a>
+              <a id='solutions' className={css(style.links)} onClick={(e) => {handleClick(e)}} onMouseOver={() => {showDropdown ? setShowDropdown(false) : setShowDropdown(true)}} onMouseOut={() => setShowDropdown(false)}>Solutions
+              </a>              
+              <ul onMouseOver={() => setShowDropdown(true)} onMouseOut={() => setShowDropdown(false)} className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
+                <li className={css(style.linksDropdown)} id="experience" onClick={(e) => handleSolutionsType(e)}>Experience</li>
+                <li className={css(style.linksDropdown)} id="academic" onClick={(e) => {handleSolutionsType(e)}}>Academic formation</li>
+                <li className={css(style.linksDropdown)} id="courses" onClick={(e) => {handleSolutionsType(e)}}>Courses</li>
+              </ul>
             </li>
             <li onClick={toggleContactModal}>
               <span className={css(style.links)} onClick={() => {setShowDropdown(false); setShowBurger(false)}}>Contact</span>
@@ -132,6 +138,9 @@ function App() {
         </section>
       
         <section className={css(style.page)}>
+          {
+            page === 'home' ? <Home /> : null
+          }
           {
             page === 'about' ? <About /> : null
           }
@@ -158,7 +167,7 @@ const style = StyleSheet.create ({
     position: 'fixed',
     marginTop: '-5px',
     zIndex: '1',
-    backgroundColor: '#82C9D9',
+    backgroundColor: '#D7D7D9',
     '-moz-transition'    : 'all 1s ease-out',
     '-o-transition'      : 'all 1s ease-out',
     '-webkit-transition' : 'all 1s ease-out',
@@ -173,7 +182,7 @@ const style = StyleSheet.create ({
     borderBottom: 'none',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#82C9D9',
+    backgroundColor: '#D7D7D9',
     position: 'fixed',
     zIndex: '1',
     '-moz-transition'    : 'all 1s ease-out',
@@ -192,7 +201,7 @@ const style = StyleSheet.create ({
       borderBottom: 'none',
       alignItems: 'center',
       width: '100%',
-      backgroundColor: '#82C9D9',
+      backgroundColor: '#405B73',
       position: 'fixed',
       zIndex: '1',      
     }
@@ -201,40 +210,40 @@ const style = StyleSheet.create ({
 		fontFamily: `'Questrial', sans-serif`,
 		fontSize: '60px',
 		fontWeight: 'light',
-		color: '#82C9D9',
-		backgroundColor: '#0D0D0D',
+		color: '#D7D7D9',
+		backgroundColor: '#011140',
 		padding: '10px',
 		marginBottom: '8px',
 		width: '96px',
-		border: '1px solid black',
+		border: '1px solid #D9D9D9',
     marginTop: '0',
     ':hover': {
       backgroundColor: 'transparent',
-      border: '1px solid #82C9D9',
-      color: '#0D0D0D',
+      border: '1px solid #F2F2F2',
+      color: '#D7D7D9',
     }
   },
   onScrollLogo: {
     fontFamily: `'Questrial', sans-serif`,
 		fontSize: '40px',
 		fontWeight: 'light',
-		color: '#82C9D9',
-		backgroundColor: '#0D0D0D',
+		color: '#D7D7D9',
+		backgroundColor: '#011140',
 		padding: '10px',
 		marginBottom: '0',
 		width: '64px',
-		border: '1px solid black',
+		border: '1px solid #011140',
     marginTop: '0',
     ':hover': {
       backgroundColor: 'transparent',
-      border: '1px solid #82C9D9',
-      color: '#0D0D0D',
+      border: '1px solid #405B73',
+      color: '#BFA380',
     },
     '@media only screen and (max-width: 600px)': {
       ':hover': {
-        color: '#82C9D9',
-        backgroundColor: '#0D0D0D',
-        border: '1px solid black',
+        color: '#405B73',
+        backgroundColor: '#BFA380',
+        border: '1px solid #BFA380',
       }
     }
   },
@@ -276,7 +285,7 @@ const style = StyleSheet.create ({
   },
   links: {
     textDecoration: 'none',
-    color: "#0D0D0D",
+    color: "#011140",
     textTransform: 'uppercase',
     fontFamily: `'Roboto', sans-serif`,
     fontWeight: '700',
@@ -293,21 +302,21 @@ const style = StyleSheet.create ({
   },
   dropdownMenu: {
     position: 'absolute',
-    display: 'block',
+    padding: '0',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
     zIndex: '1',
-    margin: '0 auto',
     listStyle: 'none',
-    padding: '20px',
-    backgroundColor: 'rgba(13,13,13,.8)',
-    borderRadius: '15px',
-    color: '#82C9D9',
-    textTransform: 'uppercase',
+    backgroundColor: '#1C3240',
+    borderRadius: '2px',
+    color: '#D7D7D9',
     fontFamily: `'Roboto', sans-serif`,
-    fontWeight: '700',
+    fontWeight: '500',
     lineHeight: '30px',
-    fontSize: '14px',
+    fontSize: '15px',
     '@media only screen and (max-width: 600px)': {
-      backgroundColor: '#181B1C',
+      backgroundColor: '#1C3240',
     }
   },
   hideDropdownMenu: {
@@ -315,8 +324,10 @@ const style = StyleSheet.create ({
   },
   linksDropdown: {
     cursor: 'pointer',
+    padding: '5px 5px 0 10px',
     ':hover': {
-      textDecoration: 'underline'
+      background: '#D7D7D9',
+      color: '#1C3240',
     }
   },
   whitespace: {

@@ -23,8 +23,8 @@ const style = StyleSheet.create({
 		display: 'flex',
 		justifyContent: 'space-around',
 		alignItems: 'center',
-		backgroundColor: '#0D0D0D',
-		color: '#82C9D9',
+		backgroundColor: '#070F26',
+		color: '#D7D7D9',
 	},
 	menu: {
 		display: 'flex',
