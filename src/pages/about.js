@@ -4,7 +4,6 @@ import React from 'react';
 function About() {
 	return(
 		<div className={css(style.page)}>
-			<h1 className={css(style.title)}>About me...</h1>
 			<p className={css(style.text)}>Hi, I'm <b>Mihai Gherman</b> and I've been involved with Automation and the SCADA Industry even before University graduation, I've been working for more than 10 years as a Project Engineer, System Integrator, SCADA/PLC and ADMS specialist. The last 9 years were in the Oil&Gas and Electrical Industries.</p>
 
 			<p className={css(style.text)}>In the last years I started focusing on Turbine Controls Systems, and worked as Lead Programmer on more than 5 Gas Turbines with <i>Woodward and Allen Bradley Controls</i>.</p>

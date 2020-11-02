@@ -7,15 +7,30 @@ import turbineWheelIcon from '../images/turbineWheel.png';
 import electricIcon from '../images/power-line-connected-towers.png';
 import oilAndGasIcon from '../images/oilandgas.png';
 import vibrationIcon from '../images/equalizer.png';
+import locationIcon from '../images/location.png';
 
 function Home() {
 	return (
 		<div>
 			<h1 className={css(style.titleBig)}>Welcome</h1>
 			<p className={css(style.lineBig)}></p>
-			<p className={css(style.text)}>
-				I'm Mihai Gherman, an Automation Engineer focused on Turbine Controls and Industrial Control Systems. <br></br>I have been involved with Automation and the SCADA Industrial Systems even before University graduation, and been working for more than 12 years as a Project Engineer, System Integrator, SCADA/PLC specialist. <br></br>I'm certified with various control systems brands and electrical norms like IEC 61850 and ISO certified Cat. II Vibration Analyst.
-			</p>
+			<div>
+				<div style={{display: 'inline', float: 'left'}}>
+					<img 
+						className={css(style.locationIcon)} 
+						src={locationIcon} 
+						alt="Location icon"
+						style={{float: 'left'}}
+					/>
+					<div>
+					<p>Based in Ecuador</p>
+					<p>Working worldwide</p>
+					</div>
+				</div>
+				<p className={css(style.text)}>
+					I'm Mihai Gherman, an Automation Engineer focused on Turbine Controls and Industrial Control Systems. <br></br>I have been involved with Automation and the SCADA Industrial Systems even before University graduation, and been working for more than 12 years as a Project Engineer, System Integrator, SCADA/PLC specialist. <br></br>I'm certified with various control systems brands and electrical norms like IEC 61850 and ISO certified Cat. II Vibration Analyst.
+				</p>
+			</div>
 			<p className={css(style.line)}></p>
 			<h2 className={css(style.subtitle)}>Services</h2>
 			<section className={css(style.solutionsSection)}>
@@ -53,6 +68,7 @@ function Home() {
 				/>
 			</section>
 			<p className={css(style.line)}></p>
+			<h2 className={css(style.subtitle)}>Costumers</h2>
 		</div>
 	)
 }
@@ -95,6 +111,9 @@ const style = StyleSheet.create({
       width: '100%',
     }
 	},
+	locationIcon: {
+		width: '30px',
+	},
 	subtitle: {
 		textAlign: 'center',
 		color: '#1C3240',
@@ -109,7 +128,7 @@ const style = StyleSheet.create({
 	text: {
 		margin: '0 auto 40px',
 		textAlign: 'center',
-		width: '78%',
+		width: '60%',
 		lineHeight: '30px',
 		fontSize: '16px',
 		fontFamily: `'Roboto', sans-serif`,

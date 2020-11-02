@@ -5,7 +5,6 @@ import Modali, { useModali } from 'modali';
 
 import Header from './components/header.js';
 import Footer from './components/footer.js';
-import Work from './pages/work.js';
 import About from './pages/about.js';
 import Contact from './pages/contact.js';
 import Solutions from './pages/solutions.js';
@@ -47,20 +46,14 @@ function App() {
     showDropdown ? setShowDropdown(true) : setShowDropdown(false);    
   }
 
-  const handleWorkType = (e) => {
+  const handleSolutionsType = (e) => {
     setShowDropdown(false);
     setCurricula(e.target.id);
-    setPage('work');
+    setPage('Solutions');
   }
 
   const handleBurger = () => {
     showBurger ? setShowBurger(false) : setShowBurger(true);
-  }
-
-  const handleSolutionsType = (e) => {
-    setShowDropdown(false);
-    // setCurricula(e.target.id);
-    setPage('solutions');
   }
 
   return (
@@ -100,33 +93,40 @@ function App() {
               </li>
               <li style={{marginBottom: '10px'}}>
                 <a 
-                  id='work'
+                  id='solutions'
                   className={css(style.links)}
                   onClick={(e) => {handleClick(e)}}
                 >
-                  Work
+                  Solutions
                 </a>
                 <ul className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
                   <li 
                     className={css(style.linksDropdown)} 
                     id="experience" 
-                    onClick={(e) => {handleWorkType(e); handleBurger()}}
+                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
                   >
-                    Experience
+                    Turbine Control Systems
                   </li>
                   <li 
                     className={css(style.linksDropdown)} 
                     id="academic" 
-                    onClick={(e) => {handleWorkType(e); handleBurger()}}
+                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
                   >
-                    Academic formation
+                    Electrical Substation Automation
                   </li>
                   <li 
                     className={css(style.linksDropdown)} 
                     id="courses" 
-                    onClick={(e) => {handleWorkType(e); handleBurger()}}
+                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
                   >
-                    Courses
+                    Oil&Gas Control Systems
+                  </li>
+                  <li 
+                    className={css(style.linksDropdown)} 
+                    id="courses" 
+                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
+                  >
+                    Vibration Analysis
                   </li>
                 </ul>
               </li>
@@ -135,7 +135,7 @@ function App() {
                   className={css(style.links)} 
                   onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
                 >
-                  Solutions
+                  Costumers
                 </a>
               </li>
               <li 
@@ -192,29 +192,36 @@ function App() {
                   id="experience" 
                   onClick={(e) => handleSolutionsType(e)}
                 >
-                  Experience
+                  Turbine Control Systems
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
                   id="academic" 
                   onClick={(e) => {handleSolutionsType(e)}}
                 >
-                  Academic formation
+                  Electrical Substation Automation
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
                   id="courses" 
                   onClick={(e) => {handleSolutionsType(e)}}
                 >
-                  Courses
+                  Oil&Gas Control Systems
+                </li>
+                <li 
+                  className={css(style.linksDropdown)} 
+                  id="courses" 
+                  onClick={(e) => {handleSolutionsType(e)}}
+                >
+                  Vibration Analysis
                 </li>
               </ul>
             </li>
             <li>
               <a 
-                id='work' 
+                id='solutions' 
                 className={css(style.links)} 
-                onClick={() => setPage('work')}
+                onClick={() => setPage('Solutions')}
               >
                 Costumers
               </a>              
@@ -238,9 +245,6 @@ function App() {
           }
           {
             page === 'about' ? <About /> : null
-          }
-          {
-            page === 'work' ? <Work /> : null
           }
           {
             page === 'solutions' ? <Solutions /> : null
