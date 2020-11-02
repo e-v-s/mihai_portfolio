@@ -49,12 +49,8 @@ function App() {
   }, []);
 
   const handleClick = (e) => {
-    if (e.target.id === 'solutions') {
-      showDropdown ? setShowDropdown(false) : setShowDropdown(true);
-    } else {      
-      setPage(e.target.id);
-      setShowDropdown(true);
-    }
+    showDropdown ? setShowDropdown(false) : setShowDropdown(true);
+    setPage(e.target.id);
   }
 
   const handleSubMenu = (e) => {
@@ -113,11 +109,7 @@ function App() {
           <Header onClick={(e) => {setPage('home'); handleSubMenu(e)}} onScroll={ windowScroll ? css(style.onScroll) : css(style.headerDescription)} onScrollLogo={windowScroll ? css(style.onScrollLogo) : css(style.headerTitle)} />
           <ul className={css(style.menu)}>
             <li>
-              <a id='about' className={css(style.links)} onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false)}}>About</a>
-            </li>
-            <li>
-              <a id='work' className={css(style.links)} onClick={() => setPage('work')}>Work
-              </a>              
+              <a id='about' className={css(style.links)} onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false)}}>About me</a>
             </li>
             <li>
               <a id='solutions' className={css(style.links)} onClick={(e) => {handleClick(e)}} onMouseOver={() => {showDropdown ? setShowDropdown(false) : setShowDropdown(true)}} onMouseOut={() => setShowDropdown(false)}>Solutions
@@ -127,6 +119,10 @@ function App() {
                 <li className={css(style.linksDropdown)} id="academic" onClick={(e) => {handleSolutionsType(e)}}>Academic formation</li>
                 <li className={css(style.linksDropdown)} id="courses" onClick={(e) => {handleSolutionsType(e)}}>Courses</li>
               </ul>
+            </li>
+            <li>
+              <a id='work' className={css(style.links)} onClick={() => setPage('work')}>Costumers
+              </a>              
             </li>
             <li onClick={toggleContactModal}>
               <span className={css(style.links)} onClick={() => {setShowDropdown(false); setShowBurger(false)}}>Contact</span>
