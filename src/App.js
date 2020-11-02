@@ -67,7 +67,7 @@ function App() {
     <div className={"App" && css(style.body)}>
         <section className={css(style.headerMobile)}>
           <Header 
-            onClick={() => {setPage('about'); setShowBurger(false)}} 
+            onClick={() => {setPage('home'); setShowBurger(false)}} 
             onScrollLogo={css(style.onScrollLogo)} 
           />
           <div style={{display: 'flex', flexDirection: 'column'}}>
@@ -89,16 +89,16 @@ function App() {
               }
             </button>
             <ul className={!showBurger ? css(style.mobileMenu) : css(style.mobileMenuHide)}>
-              <li>
+              <li style={{margin: '10px 0'}}>
                 <a 
                   id='about' 
                   className={css(style.links)} 
                   onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
                 >
-                  About
+                  About me
                 </a>
               </li>
-              <li>
+              <li style={{marginBottom: '10px'}}>
                 <a 
                   id='work'
                   className={css(style.links)}
@@ -130,7 +130,7 @@ function App() {
                   </li>
                 </ul>
               </li>
-              <li>
+              <li style={{marginBottom: '10px'}}>
                 <a 
                   className={css(style.links)} 
                   onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
@@ -138,7 +138,10 @@ function App() {
                   Solutions
                 </a>
               </li>
-              <li onClick={toggleContactModal}>
+              <li 
+                onClick={toggleContactModal} 
+                style={{marginBottom: '10px'}}
+              >
                 <span 
                   className={css(style.links)} 
                   onClick={() => {setShowDropdown(false); handleBurger()}}
@@ -293,7 +296,7 @@ const style = StyleSheet.create ({
       borderBottom: 'none',
       alignItems: 'center',
       width: '100%',
-      backgroundColor: '#405B73',
+      backgroundColor: '#D7D7D9',
       position: 'fixed',
       zIndex: '1',      
     }
@@ -333,9 +336,9 @@ const style = StyleSheet.create ({
     },
     '@media only screen and (max-width: 600px)': {
       ':hover': {
-        color: '#405B73',
-        backgroundColor: '#BFA380',
-        border: '1px solid #BFA380',
+        color: '#D7D7D9',
+		    backgroundColor: '#011140',
+        border: '1px solid #011140',
       }
     }
   },
@@ -356,6 +359,7 @@ const style = StyleSheet.create ({
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'right',
+    height: '100%',
   },
   burger: {
     display: 'none',
@@ -390,6 +394,9 @@ const style = StyleSheet.create ({
     },
     ':focus': {
       color: '#311C40',
+    },
+    '@media only screen and (max-width: 600px)': {
+      fontSize: '20px',
     }
   },
   dropdownMenu: {
@@ -436,7 +443,7 @@ const style = StyleSheet.create ({
     zIndex: '-1',
     backgroundColor: 'transparent',
     '@media only screen and (max-width: 600px)': {
-      paddingTop: '80px',
+      paddingTop: '100px',
     }
   },
 });

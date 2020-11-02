@@ -12,6 +12,7 @@ function Home() {
 	return (
 		<div>
 			<h1 className={css(style.titleBig)}>Welcome</h1>
+			<p className={css(style.lineBig)}></p>
 			<p className={css(style.text)}>
 				I'm Mihai Gherman, an Automation Engineer focused on Turbine Controls and Industrial Control Systems. <br></br>I have been involved with Automation and the SCADA Industrial Systems even before University graduation, and been working for more than 12 years as a Project Engineer, System Integrator, SCADA/PLC specialist. <br></br>I'm certified with various control systems brands and electrical norms like IEC 61850 and ISO certified Cat. II Vibration Analyst.
 			</p>
@@ -51,6 +52,7 @@ function Home() {
 					cardStyle={css(style.cardStyle)}
 				/>
 			</section>
+			<p className={css(style.line)}></p>
 		</div>
 	)
 }
@@ -59,7 +61,10 @@ const style = StyleSheet.create({
 	solutionsSection: {
 		display: 'flex',
 		justifyContent: 'space-around',
-		marginBottom: '60px',
+		marginBottom: '80px',
+		'@media only screen and (max-width: 1020px)': {
+			flexDirection: 'column',
+		}
 	},
 	cardStyle: {
 		display: 'flex',
@@ -68,18 +73,27 @@ const style = StyleSheet.create({
 		padding: '30px',
 		border: '1px solid #D7D7D9',
 		borderRadius: '10px',
+		'@media only screen and (max-width: 1020px)': {
+			marginBottom: '20px',
+		}
 	},
 	titleBig: {
 		textAlign: 'center',
-		borderBottom: '2px solid #395659',
 		color: '#1C3240',
 		fontWeight: '300',
 		paddingBottom: '30px',
 		fontFamily: `'Roboto', sans-serif`,
 		fontSize: '50px',
-		width: '70%',
-		margin: '60px auto',
+		margin: '10px auto',
 		textTransform: 'uppercase',
+	},
+	lineBig: {
+		width: '70%',
+		borderBottom: '2px solid #1C3240',
+		margin: '0 auto 50px',
+		'@media only screen and (max-width: 600px)': {
+      width: '100%',
+    }
 	},
 	subtitle: {
 		textAlign: 'center',
@@ -95,9 +109,15 @@ const style = StyleSheet.create({
 	text: {
 		margin: '0 auto 40px',
 		textAlign: 'center',
-		width: '64%',
+		width: '78%',
 		lineHeight: '30px',
+		fontSize: '16px',
 		fontFamily: `'Roboto', sans-serif`,
+		'@media only screen and (max-width: 600px)': {
+			width: '100%',
+			fontSize: '18px',
+			textAlign: 'justify',
+		}
 	},
 	line: {
 		width: '30%',
@@ -118,7 +138,11 @@ const style = StyleSheet.create({
 		fontFamily: `'Roboto', sans-serif`,
 		fontWeight: '400',
 		color: '#031940',
-		textDecoration: 'underline',
+		'@media only screen and (max-width: 600px)': {
+			fontSize: '20px',
+			lineHeight: '30px',
+			textAlign: 'center',
+		}
 	}
 });
 
