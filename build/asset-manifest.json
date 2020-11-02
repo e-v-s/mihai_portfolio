@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.js": "/mihai_portfolio/build/static/js/main.6c47ea8d.chunk.js",
-    "main.js.map": "/mihai_portfolio/build/static/js/main.6c47ea8d.chunk.js.map",
+    "main.js": "/mihai_portfolio/build/static/js/main.8ad48acc.chunk.js",
+    "main.js.map": "/mihai_portfolio/build/static/js/main.8ad48acc.chunk.js.map",
     "runtime-main.js": "/mihai_portfolio/build/static/js/runtime-main.5a1855ac.js",
     "runtime-main.js.map": "/mihai_portfolio/build/static/js/runtime-main.5a1855ac.js.map",
     "static/css/2.ab77c0f9.chunk.css": "/mihai_portfolio/build/static/css/2.ab77c0f9.chunk.css",
-    "static/js/2.ca97fded.chunk.js": "/mihai_portfolio/build/static/js/2.ca97fded.chunk.js",
-    "static/js/2.ca97fded.chunk.js.map": "/mihai_portfolio/build/static/js/2.ca97fded.chunk.js.map",
+    "static/js/2.0e173772.chunk.js": "/mihai_portfolio/build/static/js/2.0e173772.chunk.js",
+    "static/js/2.0e173772.chunk.js.map": "/mihai_portfolio/build/static/js/2.0e173772.chunk.js.map",
     "index.html": "/mihai_portfolio/build/index.html",
     "static/css/2.ab77c0f9.chunk.css.map": "/mihai_portfolio/build/static/css/2.ab77c0f9.chunk.css.map",
-    "static/js/2.ca97fded.chunk.js.LICENSE.txt": "/mihai_portfolio/build/static/js/2.ca97fded.chunk.js.LICENSE.txt",
+    "static/js/2.0e173772.chunk.js.LICENSE.txt": "/mihai_portfolio/build/static/js/2.0e173772.chunk.js.LICENSE.txt",
+    "static/media/equalizer.8df20af5.png": "/mihai_portfolio/build/static/media/equalizer.8df20af5.png",
     "static/media/logo.52a6577b.png": "/mihai_portfolio/build/static/media/logo.52a6577b.png",
+    "static/media/oilandgas.d468185e.png": "/mihai_portfolio/build/static/media/oilandgas.d468185e.png",
+    "static/media/power-line-connected-towers.190be64b.png": "/mihai_portfolio/build/static/media/power-line-connected-towers.190be64b.png",
+    "static/media/turbineWheel.8300ba6c.png": "/mihai_portfolio/build/static/media/turbineWheel.8300ba6c.png",
     "static/media/utcn.540e6e1f.png": "/mihai_portfolio/build/static/media/utcn.540e6e1f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5a1855ac.js",
     "static/css/2.ab77c0f9.chunk.css",
-    "static/js/2.ca97fded.chunk.js",
-    "static/js/main.6c47ea8d.chunk.js"
+    "static/js/2.0e173772.chunk.js",
+    "static/js/main.8ad48acc.chunk.js"
   ]
 }
