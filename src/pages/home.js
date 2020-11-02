@@ -133,7 +133,7 @@ function Home() {
 				</Flippy>
 			</section>
 			<p className={css(style.line)}></p>
-			<h2 className={css(style.subtitle)}>Costumers</h2>
+			<h2 className={css(style.subtitle)}>Customers</h2>
 		</div>
 	)
 }
