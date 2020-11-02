@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
 import CardSolution from '../components/workIcons.js';
 
@@ -34,38 +35,102 @@ function Home() {
 			<p className={css(style.line)}></p>
 			<h2 className={css(style.subtitle)}>Services</h2>
 			<section className={css(style.solutionsSection)}>
-				<CardSolution
-					alt="Turbine wheel"
-					className={css(style.icon)}
-					src={turbineWheelIcon}
-					titleStyle={css(style.title)}
-					text="Turbine Control Systems"
-					cardStyle={css(style.cardStyle)}
-				/>
-				<CardSolution 
-					alt="Tool"
-					className={css(style.icon)}
-					src={electricIcon}
-					titleStyle={css(style.title)}
-					text="Electrical Substation Automation"
-					cardStyle={css(style.cardStyle)}
-				/>
-				<CardSolution 
-					alt="Paper"
-					className={css(style.icon)}
-					src={oilAndGasIcon}
-					titleStyle={css(style.title)}
-					text="Oil&Gas Control Systems"
-					cardStyle={css(style.cardStyle)}
-				/>
-				<CardSolution 
-					alt="Paper"
-					className={css(style.icon)}
-					src={vibrationIcon}
-					titleStyle={css(style.title)}
-					text="Vibration Analysis"
-					cardStyle={css(style.cardStyle)}
-				/>
+				<Flippy 
+					flipOnHover={false} // default false
+					flipOnClick={true}
+					flipDirection="horizontal"
+					style={{margin:'20px'}} 
+				>
+					<FrontSide 
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+							padding: '30px',
+							border: '1px solid #D7D7D9',
+							borderRadius: '10px',
+							cursor: 'pointer',
+							boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+						}}>
+							<img className={css(style.icon)} src={turbineWheelIcon} />
+							<h2 className={css(style.title)}>Turbine Control Systems</h2>
+					</FrontSide>
+					<BackSide style={{borderRadius: '10px', cursor: 'pointer',}}>
+						teste
+					</BackSide>
+				</Flippy>
+				<Flippy 
+					flipOnHover={false} // default false
+					flipOnClick={true}
+					flipDirection="horizontal"
+					style={{margin:'20px'}} 
+				>
+					<FrontSide 
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+							padding: '30px',
+							border: '1px solid #D7D7D9',
+							borderRadius: '10px',
+							cursor: 'pointer',
+							boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+						}}>
+							<img className={css(style.icon)} src={electricIcon} />
+							<h2 className={css(style.title)}>Electrical Substation Automation</h2>
+					</FrontSide>
+					<BackSide style={{borderRadius: '10px'}}>
+						teste
+					</BackSide>
+				</Flippy>
+				<Flippy 
+					flipOnHover={false} // default false
+					flipOnClick={true}
+					flipDirection="horizontal"
+					style={{margin:'20px'}} 
+				>
+					<FrontSide 
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+							padding: '30px',
+							border: '1px solid #D7D7D9',
+							borderRadius: '10px',
+							cursor: 'pointer',
+							boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+						}}>
+							<img className={css(style.icon)} src={oilAndGasIcon} />
+							<h2 className={css(style.title)}>Oil&Gas Control Systems</h2>
+					</FrontSide>
+					<BackSide style={{borderRadius: '10px'}}>
+						teste
+					</BackSide>
+				</Flippy>
+				<Flippy 
+					flipOnHover={false} // default false
+					flipOnClick={true}
+					flipDirection="horizontal"
+					style={{margin:'20px'}} 
+				>
+					<FrontSide 
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+							padding: '30px',
+							border: '1px solid #D7D7D9',
+							borderRadius: '10px',
+							cursor: 'pointer',
+							boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+						}}>
+							<img className={css(style.icon)} src={vibrationIcon} />
+							<h2 className={css(style.title)}>Vibration Analysis</h2>
+					</FrontSide>
+					<BackSide style={{borderRadius: '10px'}}>
+						teste
+					</BackSide>
+				</Flippy>
 			</section>
 			<p className={css(style.line)}></p>
 			<h2 className={css(style.subtitle)}>Costumers</h2>
@@ -89,6 +154,8 @@ const style = StyleSheet.create({
 		padding: '30px',
 		border: '1px solid #D7D7D9',
 		borderRadius: '10px',
+		cursor: 'pointer',
+		boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
 		'@media only screen and (max-width: 1020px)': {
 			marginBottom: '20px',
 		}
@@ -144,9 +211,8 @@ const style = StyleSheet.create({
 		margin: '0 auto 60px',
 	},
 	icon: {
-		width: '100px',
+		width: '180px',
 		filter: 'invert(26%) sepia(54%) saturate(612%) hue-rotate(153deg) brightness(96%) contrast(60%)',
-		cursor: 'pointer',
 		padding: '20px',
 		':hover': {
 			filter: 'invert(31%) sepia(34%) saturate(354%) hue-rotate(137deg) brightness(90%) contrast(93%)',
