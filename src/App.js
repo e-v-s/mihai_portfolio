@@ -2,16 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Modali, { useModali } from 'modali';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import { slide as Menu } from 'react-burger-menu'
 
-// import Button from './components/button.js';
 import Header from './components/header.js';
 import Footer from './components/footer.js';
 import Work from './pages/work.js';
@@ -27,8 +18,7 @@ function App() {
   const [contactModal, toggleContactModal] = useModali({
     title: 'You can contact me via ...',
   });
-  const [changeStyle, setChangeStyle] = useState(false);
-  const [page, setPage] = useState('about');
+  const [page, setPage] = useState('home');
   const [windowScroll, setWindowScroll] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [curricula, setCurricula] = useState('experience');
@@ -76,63 +66,169 @@ function App() {
   return (
     <div className={"App" && css(style.body)}>
         <section className={css(style.headerMobile)}>
-          <Header onClick={() => {setPage('about'); setShowBurger(false)}} onScrollLogo={css(style.onScrollLogo)} />
+          <Header 
+            onClick={() => {setPage('about'); setShowBurger(false)}} 
+            onScrollLogo={css(style.onScrollLogo)} 
+          />
           <div style={{display: 'flex', flexDirection: 'column'}}>
-            <button className={css(style.burger)} onClick={() => {handleBurger(); setShowDropdown(false)}}>{!showBurger ? <img className={css(style.burgerIcon)} src={burgerIcon} alt="Menu mobile icon click to open" /> : <img className={css(style.burgerIconClose)} src={burgerIconClose} alt="Menu mobile icon click to close" />}</button>
+            <button 
+              className={css(style.burger)} 
+              onClick={() => {handleBurger(); setShowDropdown(false)}}>
+              {
+                !showBurger ? 
+                <img 
+                  className={css(style.burgerIcon)} 
+                  src={burgerIcon} 
+                  alt="Menu mobile icon click to open"
+                /> : 
+                <img 
+                  className={css(style.burgerIconClose)}
+                  src={burgerIconClose}
+                  alt="Menu mobile icon click to close"
+                />
+              }
+            </button>
             <ul className={!showBurger ? css(style.mobileMenu) : css(style.mobileMenuHide)}>
               <li>
-                <a id='about' className={css(style.links)} onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}>About</a>
+                <a 
+                  id='about' 
+                  className={css(style.links)} 
+                  onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
+                >
+                  About
+                </a>
               </li>
               <li>
-                <a id='work' className={css(style.links)} onClick={(e) => {handleClick(e)}}>Work
+                <a 
+                  id='work'
+                  className={css(style.links)}
+                  onClick={(e) => {handleClick(e)}}
+                >
+                  Work
                 </a>
                 <ul className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
-                  <li className={css(style.linksDropdown)} id="experience" onClick={(e) => {handleWorkType(e); handleBurger()}}>Experience</li>
-                  <li className={css(style.linksDropdown)} id="academic" onClick={(e) => {handleWorkType(e); handleBurger()}}>Academic formation</li>
-                  <li className={css(style.linksDropdown)} id="courses" onClick={(e) => {handleWorkType(e); handleBurger()}}>Courses</li>
+                  <li 
+                    className={css(style.linksDropdown)} 
+                    id="experience" 
+                    onClick={(e) => {handleWorkType(e); handleBurger()}}
+                  >
+                    Experience
+                  </li>
+                  <li 
+                    className={css(style.linksDropdown)} 
+                    id="academic" 
+                    onClick={(e) => {handleWorkType(e); handleBurger()}}
+                  >
+                    Academic formation
+                  </li>
+                  <li 
+                    className={css(style.linksDropdown)} 
+                    id="courses" 
+                    onClick={(e) => {handleWorkType(e); handleBurger()}}
+                  >
+                    Courses
+                  </li>
                 </ul>
               </li>
               <li>
-                <a className={css(style.links)} onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}>Solutions</a>
+                <a 
+                  className={css(style.links)} 
+                  onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
+                >
+                  Solutions
+                </a>
               </li>
               <li onClick={toggleContactModal}>
-                <span className={css(style.links)} onClick={() => {setShowDropdown(false); handleBurger()}}>Contact</span>
+                <span 
+                  className={css(style.links)} 
+                  onClick={() => {setShowDropdown(false); handleBurger()}}
+                >
+                  Contact
+                </span>
               </li>
               <Modali.Modal {...contactModal}>
                 <Contact />
               </Modali.Modal>
             </ul>
           </div>
-          
-        </section> 
+        </section>
+        
+        
+
         <section className={windowScroll ? css(style.newHeader) : css(style.header)}>
-          <Header onClick={(e) => {setPage('home'); handleSubMenu(e)}} onScroll={ windowScroll ? css(style.onScroll) : css(style.headerDescription)} onScrollLogo={windowScroll ? css(style.onScrollLogo) : css(style.headerTitle)} />
+          <Header 
+            onClick={(e) => {setPage('home'); handleSubMenu(e)}} 
+            onScroll={ windowScroll ? css(style.onScroll) : css(style.headerDescription)} onScrollLogo={windowScroll ? css(style.onScrollLogo) : css(style.headerTitle)}
+          />
           <ul className={css(style.menu)}>
             <li>
-              <a id='about' className={css(style.links)} onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false)}}>About me</a>
+              <a 
+                id='about' 
+                className={css(style.links)} 
+                onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false)}}
+              >
+                About me
+              </a>
             </li>
             <li>
-              <a id='solutions' className={css(style.links)} onClick={(e) => {handleClick(e)}} onMouseOver={() => {showDropdown ? setShowDropdown(false) : setShowDropdown(true)}} onMouseOut={() => setShowDropdown(false)}>Solutions
+              <a 
+                id='solutions' 
+                className={css(style.links)} 
+                onClick={(e) => {handleClick(e)}} 
+                onMouseOver={() => {showDropdown ? setShowDropdown(false) : setShowDropdown(true)}}
+                onMouseOut={() => setShowDropdown(false)}
+              >
+                Solutions
               </a>              
-              <ul onMouseOver={() => setShowDropdown(true)} onMouseOut={() => setShowDropdown(false)} className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
-                <li className={css(style.linksDropdown)} id="experience" onClick={(e) => handleSolutionsType(e)}>Experience</li>
-                <li className={css(style.linksDropdown)} id="academic" onClick={(e) => {handleSolutionsType(e)}}>Academic formation</li>
-                <li className={css(style.linksDropdown)} id="courses" onClick={(e) => {handleSolutionsType(e)}}>Courses</li>
+              <ul 
+                onMouseOver={() => setShowDropdown(true)} 
+                onMouseOut={() => setShowDropdown(false)} 
+                className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
+                <li 
+                  className={css(style.linksDropdown)} 
+                  id="experience" 
+                  onClick={(e) => handleSolutionsType(e)}
+                >
+                  Experience
+                </li>
+                <li 
+                  className={css(style.linksDropdown)} 
+                  id="academic" 
+                  onClick={(e) => {handleSolutionsType(e)}}
+                >
+                  Academic formation
+                </li>
+                <li 
+                  className={css(style.linksDropdown)} 
+                  id="courses" 
+                  onClick={(e) => {handleSolutionsType(e)}}
+                >
+                  Courses
+                </li>
               </ul>
             </li>
             <li>
-              <a id='work' className={css(style.links)} onClick={() => setPage('work')}>Costumers
+              <a 
+                id='work' 
+                className={css(style.links)} 
+                onClick={() => setPage('work')}
+              >
+                Costumers
               </a>              
             </li>
             <li onClick={toggleContactModal}>
-              <span className={css(style.links)} onClick={() => {setShowDropdown(false); setShowBurger(false)}}>Contact</span>
+              <span 
+                className={css(style.links)} 
+                onClick={() => {setShowDropdown(false); setShowBurger(false)}}
+              >
+                Contact
+              </span>
             </li>
             <Modali.Modal {...contactModal}>
               <Contact />
             </Modali.Modal>
           </ul>
-        </section>
-      
+        </section>      
         <section className={css(style.page)}>
           {
             page === 'home' ? <Home /> : null
@@ -141,7 +237,7 @@ function App() {
             page === 'about' ? <About /> : null
           }
           {
-            page === 'work' ? <Work curricula={curricula}  /> : null
+            page === 'work' ? <Work /> : null
           }
           {
             page === 'solutions' ? <Solutions /> : null
