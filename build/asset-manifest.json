@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/mihai_portfolio/build/static/js/main.3b63049f.chunk.js",
-    "main.js.map": "/mihai_portfolio/build/static/js/main.3b63049f.chunk.js.map",
+    "main.js": "/mihai_portfolio/build/static/js/main.6d89cc2d.chunk.js",
+    "main.js.map": "/mihai_portfolio/build/static/js/main.6d89cc2d.chunk.js.map",
     "runtime-main.js": "/mihai_portfolio/build/static/js/runtime-main.5a1855ac.js",
     "runtime-main.js.map": "/mihai_portfolio/build/static/js/runtime-main.5a1855ac.js.map",
     "static/css/2.4941fd45.chunk.css": "/mihai_portfolio/build/static/css/2.4941fd45.chunk.css",
@@ -11,15 +11,22 @@
     "static/css/2.4941fd45.chunk.css.map": "/mihai_portfolio/build/static/css/2.4941fd45.chunk.css.map",
     "static/js/2.22516875.chunk.js.LICENSE.txt": "/mihai_portfolio/build/static/js/2.22516875.chunk.js.LICENSE.txt",
     "static/media/equalizer.8df20af5.png": "/mihai_portfolio/build/static/media/equalizer.8df20af5.png",
+    "static/media/gaz-de-france-logo.592ad2e3.png": "/mihai_portfolio/build/static/media/gaz-de-france-logo.592ad2e3.png",
     "static/media/location.8eb4c302.png": "/mihai_portfolio/build/static/media/location.8eb4c302.png",
     "static/media/oilandgas.d468185e.png": "/mihai_portfolio/build/static/media/oilandgas.d468185e.png",
+    "static/media/pemex-logo.453329ed.png": "/mihai_portfolio/build/static/media/pemex-logo.453329ed.png",
+    "static/media/petroamazonas-logo.80478bde.png": "/mihai_portfolio/build/static/media/petroamazonas-logo.80478bde.png",
+    "static/media/petroecuador-logo.d4ff8543.png": "/mihai_portfolio/build/static/media/petroecuador-logo.d4ff8543.png",
     "static/media/power-line-connected-towers.190be64b.png": "/mihai_portfolio/build/static/media/power-line-connected-towers.190be64b.png",
+    "static/media/repsol-logo.b3b7dd85.png": "/mihai_portfolio/build/static/media/repsol-logo.b3b7dd85.png",
+    "static/media/schneider-logo.ff91edcc.png": "/mihai_portfolio/build/static/media/schneider-logo.ff91edcc.png",
+    "static/media/snam-logo.83634ede.png": "/mihai_portfolio/build/static/media/snam-logo.83634ede.png",
     "static/media/turbineWheel.8300ba6c.png": "/mihai_portfolio/build/static/media/turbineWheel.8300ba6c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5a1855ac.js",
     "static/css/2.4941fd45.chunk.css",
     "static/js/2.22516875.chunk.js",
-    "static/js/main.3b63049f.chunk.js"
+    "static/js/main.6d89cc2d.chunk.js"
   ]
 }
