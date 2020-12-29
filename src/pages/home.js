@@ -325,13 +325,12 @@ const style = StyleSheet.create({
 	basedInElement: {
 		display: 'flex',
 		flexDirection: 'column',
-		float: 'left',
 		width: '200px',
 		order: '2',
 		alignItems: 'center',
 		'@media only screen and (min-width: 600px)': {
-			float: 'right',
-			marginRight: '-60px',
+			float: 'left',
+			marginLeft: '-60px',
 			fontSize: '14px',
 			width: '180px',
 		}
