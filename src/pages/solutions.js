@@ -10,28 +10,28 @@ import vibrationIcon from '../images/equalizer.png';
 function Solutions(props) {
 	return (
 		<>
-			<div className={css(style.solutionLeft)}>
+			<div className={css(style.solutionLeft)} id="sol_1">
 				<img className={css(style.icon)} alt="turbine wheel" src={turbineWheelIcon} />
 				<div>
 					<h2 className={css(style.titleLeft)}>Turbine Control Systems</h2>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 				</div>
 			</div>
-			<div className={css(style.solutionRight)}>
+			<div className={css(style.solutionRight)} id="sol_2">
 				<img className={css(style.icon)} alt="turbine wheel" src={electricIcon} />
 				<div className={css(style.text && style.right)}>
 					<h2 className={css(style.titleRight)}>Electrical Substation Automation</h2>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 				</div>
 			</div>
-			<div className={css(style.solutionLeft)}>
+			<div className={css(style.solutionLeft)} id="sol_3">
 				<img className={css(style.icon)} alt="turbine wheel" src={oilAndGasIcon} />
 				<div>
 					<h2 className={css(style.titleLeft)}>Oil&Gas Control Systems</h2>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 				</div>
 			</div>
-			<div className={css(style.solutionRight)}>
+			<div className={css(style.solutionRight)} id="sol_4">
 				<img className={css(style.icon)} alt="turbine wheel" src={vibrationIcon} />
 				<div className={css(style.text && style.right)}>
 					<h2 className={css(style.titleRight)}>Vibration Analysis</h2>

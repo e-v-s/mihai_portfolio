@@ -111,21 +111,21 @@ function App() {
                   <li 
                     className={css(style.linksDropdown)} 
                     id="" 
-                    onClick={(e) => {handleSolutionsType(e); handleBurger(); window.scrollTo(0, 820)}}
+                    onClick={(e) => {handleSolutionsType(e); handleBurger(); document.getElementById('sol_2').scrollIntoView({ block: "start", behavior: 'smooth' })}}
                   >
                     Electrical Substation Automation
                   </li>
                   <li 
                     className={css(style.linksDropdown)} 
                     id="" 
-                    onClick={(e) => {handleSolutionsType(e); handleBurger(); window.scrollTo(0, 1600)}}
+                    onClick={(e) => {handleSolutionsType(e); handleBurger(); document.getElementById('sol_3').scrollIntoView({ block: "start", behavior: 'smooth' })}}
                   >
                     Oil&Gas Control Systems
                   </li>
                   <li 
                     className={css(style.linksDropdown)} 
                     id="" 
-                    onClick={(e) => {handleSolutionsType(e); handleBurger(); window.scrollTo(0, 2400)}}
+                    onClick={(e) => {handleSolutionsType(e); handleBurger(); document.getElementById('sol_4').scrollIntoView({ block: "start", behavior: 'smooth' })}}
                   >
                     Vibration Analysis
                   </li>
@@ -187,29 +187,29 @@ function App() {
                 className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="sol_1" 
-                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 100)}}
+                  id="" 
+                  onClick={(e) => {handleSolutionsType(e); window.scroll(0,0)}}
                 >
                   Turbine Control Systems
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="sol_2" 
-                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 300)}}
+                  id="" 
+                  onClick={(e) => {handleSolutionsType(e); document.getElementById('sol_2').scrollIntoView({ block: "center", behavior: 'smooth' })}}
                 >
                   Electrical Substation Automation
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="sol_3" 
-                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 600)}}
+                  id="" 
+                  onClick={(e) => {handleSolutionsType(e); document.getElementById('sol_3').scrollIntoView({ block: "center", behavior: 'smooth' })}}
                 >
                   Oil&Gas Control Systems
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="sol_4" 
-                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 900)}}
+                  id="" 
+                  onClick={(e) => {handleSolutionsType(e); document.getElementById('sol_4').scrollIntoView({ block: "center", behavior: 'smooth' })}}
                 >
                   Vibration Analysis
                 </li>
