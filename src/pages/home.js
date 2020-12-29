@@ -405,7 +405,7 @@ const style = StyleSheet.create({
 	},
 	cardItemDiv: {
 		'width': '60%',
-		border: '1px solid #D7D7D9',
+		borderBottom: '1px solid #D7D7D9',
 		margin: '5px auto'
 	},
 	costumersLogo: {
