@@ -1,54 +1,53 @@
-import { StyleSheet, css } from 'aphrodite';
 import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Contact() {
 	return(
 		<>
-			<ul>
+			<ul className={css(style.contactList)}>
 				<li>
-					<p>Linkedin</p>
+					<a 
+						className={css(style.link)} 
+						href="https://www.linkedin.com/in/mihai-gherman-92490086/" 
+						target="_blank" 
+						rel="noreferrer"
+					>
+						<FontAwesomeIcon
+							icon={faLinkedin}
+							alt="linkedin link"
+						/>
+					</a>
 				</li>
 				<li>
-					<p>Email</p>
-				</li>
-				<li>
-					<p>Whatsapp</p>
+					<a className={css(style.link)} href="mailto:mihai@mgtech.me">
+						<FontAwesomeIcon 
+							icon={faEnvelope}
+							alt="email link"
+						/>
+					</a>
 				</li>
 			</ul>
-			Or... if you want to, through here:
-			<form className={css(style.form)}>
-				<input className={css(style.input)} type="text" placeholder="Name" />
-				<input className={css(style.input)} type="text" placeholder="E-mail" />
-				<textarea className={css(style.input)} type="texta" rols="10" columns="10" placeholder="Enter your message here..." />
-				<button className={css(style.buttonSend)}>Send</button>
-			</form>
 		</>
 	)
 }
 
 const style = StyleSheet.create({
-	form: {
+	contactList: {
+		listStyle: 'none',
+		paddingLeft: '0',
 		display: 'flex',
-		flexDirection: 'column',
-		width: '70%',
-		margin: '20px auto',
+		justifyContent: 'space-evenly',
+		fontSize: '30px',
+		margin: '60px',
 	},
-	input: {
-		marginTop: '10px',
-		border: 'none',
-		borderBottom: '1px solid #000',
-	},
-	buttonSend: {
-		width: '100px',
-		marginTop: '20px',
-		borderRadius: '40px',
-		padding: '5px 15px',
-		outline: 'none',
-		border: '2px solid #BF9004',
-		backgroundColor: 'rgba(0,0,0,.8)',
-		color: '#BF9004',
-		fontWeight: '500',
-		fontFamily: `'Noto Sans JP', sans-serif`,
+	link: {
+		color: '#070F26',
+		':hover': {
+			color: '#45C3ED',
+		}
 	}
 })
 

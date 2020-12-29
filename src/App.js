@@ -9,6 +9,7 @@ import About from './pages/about.js';
 import Contact from './pages/contact.js';
 import Solutions from './pages/solutions.js';
 import Home from './pages/home.js';
+import Customers from './pages/customers.js';
 
 import burgerIcon from './images/menuBurger.png';
 import burgerIconClose from './images/closeMenuBurger.png';
@@ -49,7 +50,7 @@ function App() {
   const handleSolutionsType = (e) => {
     setShowDropdown(false);
     setCurricula(e.target.id);
-    setPage('Solutions');
+    setPage('solutions');
   }
 
   const handleBurger = () => {
@@ -86,7 +87,7 @@ function App() {
                 <a 
                   id='about' 
                   className={css(style.links)} 
-                  onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
+                  onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger(); window.scroll(0,0)}}
                 >
                   About me
                 </a>
@@ -95,36 +96,36 @@ function App() {
                 <a 
                   id='solutions'
                   className={css(style.links)}
-                  onClick={(e) => {handleClick(e)}}
+                  onClick={(e) => {handleClick(e); setPage('solutions')}}
                 >
                   Solutions
                 </a>
                 <ul className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
                   <li 
                     className={css(style.linksDropdown)} 
-                    id="experience" 
-                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
+                    id="" 
+                    onClick={(e) => {handleSolutionsType(e); handleBurger(); window.scrollTo(0, 0)}}
                   >
                     Turbine Control Systems
                   </li>
                   <li 
                     className={css(style.linksDropdown)} 
-                    id="academic" 
-                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
+                    id="" 
+                    onClick={(e) => {handleSolutionsType(e); handleBurger(); window.scrollTo(0, 820)}}
                   >
                     Electrical Substation Automation
                   </li>
                   <li 
                     className={css(style.linksDropdown)} 
-                    id="courses" 
-                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
+                    id="" 
+                    onClick={(e) => {handleSolutionsType(e); handleBurger(); window.scrollTo(0, 1600)}}
                   >
                     Oil&Gas Control Systems
                   </li>
                   <li 
                     className={css(style.linksDropdown)} 
-                    id="courses" 
-                    onClick={(e) => {handleSolutionsType(e); handleBurger()}}
+                    id="" 
+                    onClick={(e) => {handleSolutionsType(e); handleBurger(); window.scrollTo(0, 2400)}}
                   >
                     Vibration Analysis
                   </li>
@@ -133,7 +134,7 @@ function App() {
               <li style={{marginBottom: '10px'}}>
                 <a 
                   className={css(style.links)} 
-                  onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); handleBurger()}}
+                  onClick={(e) => {handleClick(e); setShowDropdown(false); setPage('customers'); handleBurger()}}
                 >
                   Customers
                 </a>
@@ -155,9 +156,6 @@ function App() {
             </ul>
           </div>
         </section>
-        
-        
-
         <section className={windowScroll ? css(style.newHeader) : css(style.header)}>
           <Header 
             onClick={(e) => {setPage('home'); handleSubMenu(e); window.scrollTo(0, 0)}} 
@@ -168,7 +166,7 @@ function App() {
               <a 
                 id='about' 
                 className={css(style.links)} 
-                onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false)}}
+                onClick={(e) => {handleClick(e); setShowDropdown(false); setCurricula('experience'); setShowBurger(false); window.scroll(0, 0)}}
               >
                 About me
               </a>
@@ -177,7 +175,7 @@ function App() {
               <a 
                 id='solutions' 
                 className={css(style.links)} 
-                onClick={(e) => {handleClick(e)}} 
+                onClick={(e) => {handleClick(e); setPage('solutions'); window.scrollTo(0,0)}} 
                 onMouseOver={() => {showDropdown ? setShowDropdown(false) : setShowDropdown(true)}}
                 onMouseOut={() => setShowDropdown(false)}
               >
@@ -189,29 +187,29 @@ function App() {
                 className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="experience" 
-                  onClick={(e) => handleSolutionsType(e)}
+                  id="sol_1" 
+                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 100)}}
                 >
                   Turbine Control Systems
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="academic" 
-                  onClick={(e) => {handleSolutionsType(e)}}
+                  id="sol_2" 
+                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 300)}}
                 >
                   Electrical Substation Automation
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="courses" 
-                  onClick={(e) => {handleSolutionsType(e)}}
+                  id="sol_3" 
+                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 600)}}
                 >
                   Oil&Gas Control Systems
                 </li>
                 <li 
                   className={css(style.linksDropdown)} 
-                  id="courses" 
-                  onClick={(e) => {handleSolutionsType(e)}}
+                  id="sol_4" 
+                  onClick={(e) => {handleSolutionsType(e); window.scrollTo(0, 900)}}
                 >
                   Vibration Analysis
                 </li>
@@ -219,9 +217,9 @@ function App() {
             </li>
             <li>
               <a 
-                id='solutions' 
+                id='customers' 
                 className={css(style.links)} 
-                onClick={() => setPage('Solutions')}
+                onClick={() => setPage('customers')}
               >
                 Customers
               </a>              
@@ -249,8 +247,14 @@ function App() {
           {
             page === 'solutions' ? <Solutions /> : null
           }
+          {
+            page === 'customers' ? <Customers /> : null
+          }
         </section>
-        <Footer />
+        <Footer
+          typePage={setPage}
+          modal={{contactModal, toggleContactModal}}
+        />
     </div>
   );
 }

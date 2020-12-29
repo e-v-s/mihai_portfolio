@@ -1,18 +1,21 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import Modali from 'modali';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
+import Contact from '../pages/contact.js';
 import locationIcon from '../images/location.png';
 
-function Footer() {
+function Footer(props) {
 	return (
 		<>
 		<div className={css(style.footer)}>
 			<ul className={css(style.menu)}>
-				<li className={css(style.link)}>About me</li>
-				<li className={css(style.link)}>
+				<li className={css(style.link)} onClick={() => {props.typePage('about'); window.scroll(0,0)}}>
+					About me
+				</li>
+				<li className={css(style.link)} onClick={() => props.typePage('solutions')}>
 					Solutions
 					<ul className={css(style.subMenu)}>
 						<li className={css(style.subLink)}>Turbine Control Systems</li>
@@ -21,8 +24,17 @@ function Footer() {
 						<li className={css(style.subLink)} style={{paddingBottom: '0'}}>Vibration Analysis</li>
 					</ul>
 				</li>
-				<li className={css(style.link)}>Costumers</li>
-				<li className={css(style.link)}>Contact</li>
+				<li className={css(style.link)} onClick={() => props.typePage('customers')}>Customers</li>
+				<li onClick={props.modal.toggleContactModal}>
+              <span 
+                className={css(style.link)} 
+              >
+                Contact
+              </span>
+            </li>
+            <Modali.Modal {...props.modal.contactModal}>
+              <Contact />
+            </Modali.Modal>
 			</ul>
 			<div>
 				<h1 className={css(style.name)}>Mihai Gherman</h1>
