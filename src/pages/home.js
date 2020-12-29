@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
@@ -21,6 +21,10 @@ import desfaLogo from '../images/desfa-logo.png';
 import epmapsLogo from '../images/epmaps-logo.png';
 
 function Home() {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	  }, [])
+
 	return (
 		<div>
 			<h1 className={css(style.titleBig)}>Welcome</h1>

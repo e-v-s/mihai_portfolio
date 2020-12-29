@@ -60,7 +60,7 @@ function App() {
     <div className={"App" && css(style.body)}>
         <section className={css(style.headerMobile)}>
           <Header 
-            onClick={() => {setPage('home'); setShowBurger(false)}} 
+            onClick={() => {setPage('home'); setShowBurger(false); window.scrollTo(0, 0)}} 
             onScrollLogo={css(style.onScrollLogo)} 
           />
           <div style={{display: 'flex', flexDirection: 'column'}}>
@@ -160,7 +160,7 @@ function App() {
 
         <section className={windowScroll ? css(style.newHeader) : css(style.header)}>
           <Header 
-            onClick={(e) => {setPage('home'); handleSubMenu(e)}} 
+            onClick={(e) => {setPage('home'); handleSubMenu(e); window.scrollTo(0, 0)}} 
             onScroll={ windowScroll ? css(style.onScroll) : css(style.headerDescription)} onScrollLogo={windowScroll ? css(style.onScrollLogo) : css(style.headerTitle)}
           />
           <ul className={css(style.menu)}>

@@ -1,7 +1,11 @@
 import { StyleSheet, css } from 'aphrodite';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function About() {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	  }, []);
+	  
 	return(
 		<div className={css(style.page)}>
 			<p className={css(style.text)}>
