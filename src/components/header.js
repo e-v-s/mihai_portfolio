@@ -5,9 +5,9 @@ function Header(props) {
 	return(
 		<>
 			<section className={css(style.header)}>
-				<a className={css(style.link)}>
+				<span className={css(style.link)}>
 					<h1 onClick={props.onClick} className={props.onScrollLogo}>MG</h1>
-				</a>
+				</span>
 			</section>
 		</>
 	)

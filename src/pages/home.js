@@ -16,6 +16,9 @@ import petroamazonasLogo from '../images/petroamazonas-logo.png';
 import repsolLogo from '../images/repsol-logo.png';
 import pemexLogo from '../images/pemex-logo.png';
 import petroecuadorLogo from '../images/petroecuador-logo.png';
+import powerchinaLogo from '../images/powerchina-logo.png';
+import desfaLogo from '../images/desfa-logo.png';
+import epmapsLogo from '../images/epmaps-logo.png';
 
 function Home() {
 	return (
@@ -232,7 +235,7 @@ function Home() {
 			</section>
 			<p className={css(style.line)}></p>
 			<h2 className={css(style.subtitle)}>Customers</h2>
-			<div>
+			<div className={css(style.customers)}>
 				<Customers 
 					src={snamLogo} 
 					alt="snam logo"
@@ -241,6 +244,46 @@ function Home() {
 				<Customers 
 					src={schneiderLogo} 
 					alt="schneider logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={gazDeFranceLogo} 
+					alt="gaz de france logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={petroamazonasLogo} 
+					alt="petroamazonas logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={repsolLogo} 
+					alt="repsol logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={pemexLogo} 
+					alt="pemex logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={petroecuadorLogo} 
+					alt="petroecuador logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={powerchinaLogo} 
+					alt="powerchina logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={desfaLogo} 
+					alt="desfa logo"
+					className={css(style.costumersLogo)}
+				/>
+				<Customers 
+					src={epmapsLogo} 
+					alt="epmaps logo"
 					className={css(style.costumersLogo)}
 				/>
 			</div>
@@ -368,6 +411,16 @@ const style = StyleSheet.create({
 	costumersLogo: {
 		width: '100px',
 		padding: '30px',
+		':hover': {
+			'-webkit-filter': 'grayscale(100%)',
+		}
+	},
+	customers: {
+		display: 'flex',
+		flexWrap: 'wrap',
+		justifyContent: 'space-around',
+		alignItems: 'center',
+		marginBottom: '80px',
 	}
 });
 

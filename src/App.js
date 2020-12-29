@@ -318,8 +318,8 @@ const style = StyleSheet.create ({
     marginTop: '0',
     ':hover': {
       backgroundColor: 'transparent',
-      border: '1px solid #F2F2F2',
-      color: '#D7D7D9',
+      border: '1px solid #405B73',
+      color: '#031940',
     }
   },
   onScrollLogo: {
@@ -336,7 +336,7 @@ const style = StyleSheet.create ({
     ':hover': {
       backgroundColor: 'transparent',
       border: '1px solid #405B73',
-      color: '#BFA380',
+      color: '#031940',
     },
     '@media only screen and (max-width: 600px)': {
       ':hover': {

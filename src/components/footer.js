@@ -1,5 +1,8 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import locationIcon from '../images/location.png';
 
@@ -23,11 +26,21 @@ function Footer() {
 			</ul>
 			<div>
 				<h1 className={css(style.name)}>Mihai Gherman</h1>
-				<img 
-					src={locationIcon} 
-					alt="Location icon"
-					className={css(style.locationIcon)} 
-				/>
+				<div className={css(style.location)}>
+					<img 
+						src={locationIcon} 
+						alt="Location icon"
+						className={css(style.locationIcon)} 
+					/>
+					<p>Quito | Ecuador</p>
+				</div>
+				<div className={css(style.email)}>
+					<FontAwesomeIcon
+						className={css(style.contactIcon)} 
+						icon={faEnvelope} 
+					/>
+					<p style={{fontFamily: `'Roboto', sans-serif`}}>mihai@mgtech.me</p>					
+				</div>
 			</div>
 		</div>
 		<p className={css(style.who)}>@evs</p>
@@ -42,6 +55,9 @@ const style = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: '#070F26',
 		color: '#D7D7D9',
+		'@media only screen and (max-width: 600px)': {
+			flexDirection: 'column',
+		}
 	},
 	menu: {
 		display: 'flex',
@@ -72,6 +88,7 @@ const style = StyleSheet.create({
 	locationIcon: {
 		width: '20px',
 		filter: 'invert(71%) sepia(53%) saturate(2516%) hue-rotate(168deg) brightness(100%) contrast(89%)',
+		margin: '10px',
 	},
 	who: {
 		textAlign: 'center',
@@ -79,6 +96,30 @@ const style = StyleSheet.create({
 		padding: '5px 0',
 		margin: '0',
 		backgroundColor: '#828C6C',
+	},
+	location: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	contactItems: {
+		display: 'flex',
+		justifyContent: 'center',
+	},
+	email: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginBottom: '30px',
+	},
+	contactIcon: {
+		fontSize: '30px',
+		margin: '0 10px',
+		cursor: 'pointer',
+		color: '#44C3ED',
+		':hover': {
+			color: '#F2F2F2',
+		}
 	}
 });
 
