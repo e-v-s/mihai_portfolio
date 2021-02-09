@@ -5,11 +5,11 @@
     "runtime-main.js": "/mihai_portfolio/static/js/runtime-main.879bdfd2.js",
     "runtime-main.js.map": "/mihai_portfolio/static/js/runtime-main.879bdfd2.js.map",
     "static/css/2.4941fd45.chunk.css": "/mihai_portfolio/static/css/2.4941fd45.chunk.css",
-    "static/js/2.5436c163.chunk.js": "/mihai_portfolio/static/js/2.5436c163.chunk.js",
-    "static/js/2.5436c163.chunk.js.map": "/mihai_portfolio/static/js/2.5436c163.chunk.js.map",
+    "static/js/2.837559b7.chunk.js": "/mihai_portfolio/static/js/2.837559b7.chunk.js",
+    "static/js/2.837559b7.chunk.js.map": "/mihai_portfolio/static/js/2.837559b7.chunk.js.map",
     "index.html": "/mihai_portfolio/index.html",
     "static/css/2.4941fd45.chunk.css.map": "/mihai_portfolio/static/css/2.4941fd45.chunk.css.map",
-    "static/js/2.5436c163.chunk.js.LICENSE.txt": "/mihai_portfolio/static/js/2.5436c163.chunk.js.LICENSE.txt",
+    "static/js/2.837559b7.chunk.js.LICENSE.txt": "/mihai_portfolio/static/js/2.837559b7.chunk.js.LICENSE.txt",
     "static/media/desfa-logo.9b1796fe.png": "/mihai_portfolio/static/media/desfa-logo.9b1796fe.png",
     "static/media/epmaps-logo.d1cfec85.png": "/mihai_portfolio/static/media/epmaps-logo.d1cfec85.png",
     "static/media/equalizer.8df20af5.png": "/mihai_portfolio/static/media/equalizer.8df20af5.png",
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.879bdfd2.js",
     "static/css/2.4941fd45.chunk.css",
-    "static/js/2.5436c163.chunk.js",
+    "static/js/2.837559b7.chunk.js",
     "static/js/main.b3fc4857.chunk.js"
   ]
 }
