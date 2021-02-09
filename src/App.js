@@ -21,6 +21,7 @@ function App() {
   const [page, setPage] = useState('home');
   const [windowScroll, setWindowScroll] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [curricula, setCurricula] = useState('experience');
   const [showBurger, setShowBurger] = useState(false);
 

@@ -161,7 +161,7 @@ function Home() {
 							cursor: 'pointer',
 							boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
 						}}>
-							<img className={css(style.icon)} src={oilAndGasIcon} />
+							<img className={css(style.icon)} src={oilAndGasIcon} alt='' />
 							<h2 className={css(style.title)}>Oil&Gas Control Systems</h2>
 					</FrontSide>
 					<BackSide style={{borderRadius: '10px', cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'space-around'}}>					
