@@ -2,7 +2,7 @@
   "name": "mihai",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://e-v-s.github.io/mihai_portfolio/build/",
+  "homepage": "https://e-v-s.github.io/mihai_portfolio/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
