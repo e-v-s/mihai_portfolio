@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Modali from 'modali';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,15 +7,28 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Contact from '../pages/contact.js';
 import locationIcon from '../images/location.png';
 
-function Footer(props) {
+const Footer = memo(function Footer(props) {
+	const handleAboutClick = useCallback(() => {
+		props.typePage('about');
+		window.scroll(0, 0);
+	}, [props.typePage]);
+
+	const handleSolutionsClick = useCallback(() => {
+		props.typePage('solutions');
+	}, [props.typePage]);
+
+	const handleCustomersClick = useCallback(() => {
+		props.typePage('customers');
+	}, [props.typePage]);
+
 	return (
 		<>
 		<div className={css(style.footer)}>
 			<ul className={css(style.menu)}>
-				<li className={css(style.link)} onClick={() => {props.typePage('about'); window.scroll(0,0)}}>
+				<li className={css(style.link)} onClick={handleAboutClick}>
 					About me
 				</li>
-				<li className={css(style.link)} onClick={() => props.typePage('solutions')}>
+				<li className={css(style.link)} onClick={handleSolutionsClick}>
 					Solutions
 					<ul className={css(style.subMenu)}>
 						<li className={css(style.subLink)}>Turbine Control Systems</li>
@@ -24,7 +37,7 @@ function Footer(props) {
 						<li className={css(style.subLink)} style={{paddingBottom: '0'}}>Vibration Analysis</li>
 					</ul>
 				</li>
-				<li className={css(style.link)} onClick={() => props.typePage('customers')}>Customers</li>
+				<li className={css(style.link)} onClick={handleCustomersClick}>Customers</li>
 				<li onClick={props.modal.toggleContactModal}>
               <span 
                 className={css(style.link)} 
@@ -51,14 +64,14 @@ function Footer(props) {
 						className={css(style.contactIcon)} 
 						icon={faEnvelope} 
 					/>
-					<p style={{fontFamily: `'Roboto', sans-serif`}}>mihai@mgtech.me</p>					
+					<p style={{fontFamily: `'Source Sans Pro', 'Arial', sans-serif`}}>mihai@mgtech.me</p>					
 				</div>
 			</div>
 		</div>
 		<p className={css(style.who)}>@evs</p>
 		</>
 	)
-};
+});
 
 const style = StyleSheet.create({
 	footer: {

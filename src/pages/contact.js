@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-function Contact() {
+const Contact = memo(function Contact() {
 	return(
 		<>
 			<ul className={css(style.contactList)}>
@@ -32,7 +32,7 @@ function Contact() {
 			</ul>
 		</>
 	)
-}
+});
 
 const style = StyleSheet.create({
 	contactList: {

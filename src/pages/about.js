@@ -1,10 +1,10 @@
 import { StyleSheet, css } from 'aphrodite';
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 
-function About() {
+const About = memo(function About() {
 	useEffect(() => {
 		window.scrollTo(0, 0)
-	  }, []);
+	}, []);
 
 	return(
 		<div className={css(style.page)}>
@@ -32,14 +32,14 @@ function About() {
 			<div className={css(style.textDiv)}></div>
 		</div>
 	)
-}
+});
 
 const style = StyleSheet.create({
 	page: {
 		display: 'inline',
 	},
 	text: {
-		fontFamily: `'Roboto', sans-serif`,
+		fontFamily: `'Source Sans Pro', 'Arial', sans-serif`,
 		textAlign: 'left',
 		lineHeight: '30px',
 		width: '90%',

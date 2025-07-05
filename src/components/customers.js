@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export default function Customer(props) {
+const Customer = memo(function Customer(props) {
 	return (
 		<>
 			<img 
@@ -10,4 +10,6 @@ export default function Customer(props) {
 			/>
 		</>
 	)
-}
+});
+
+export default Customer;

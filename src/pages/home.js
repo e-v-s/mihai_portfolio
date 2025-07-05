@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback, memo } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
@@ -20,10 +20,31 @@ import powerchinaLogo from '../images/powerchina-logo.png';
 import desfaLogo from '../images/desfa-logo.png';
 import epmapsLogo from '../images/epmaps-logo.png';
 
-function Home() {
+const Home = memo(function Home() {
 	useEffect(() => {
 		window.scrollTo(0, 0)
-	  }, [])
+	}, []);
+
+	const customerLogos = [
+		{ src: snamLogo, alt: "snam logo" },
+		{ src: schneiderLogo, alt: "schneider logo" },
+		{ src: gazDeFranceLogo, alt: "gaz de france logo" },
+		{ src: petroamazonasLogo, alt: "petroamazonas logo" },
+		{ src: repsolLogo, alt: "repsol logo" },
+		{ src: pemexLogo, alt: "pemex logo" },
+		{ src: petroecuadorLogo, alt: "petroecuador logo" },
+		{ src: powerchinaLogo, alt: "powerchina logo" },
+		{ src: desfaLogo, alt: "desfa logo" },
+		{ src: epmapsLogo, alt: "epmaps logo" }
+	];
+
+	const renderCustomerLogo = useCallback(({ src, alt }) => (
+		<Customers 
+			src={src} 
+			alt={alt}
+			className={css(style.costumersLogo)}
+		/>
+	), []);
 
 	return (
 		<div>
@@ -43,7 +64,7 @@ function Home() {
 					</div>
 				</div>
 				<p className={css(style.text)}>
-					I'm Mihai Gherman, Intrumentation and Control Engineer working as an independent contractor in the Energy Industry. Experienced with a variety of systems and processes, from gas turbines controls and electrical substation automation to SIL based security systems.<br></br><br></br>
+					I'm Mihai Gherman, Intrumentation and Control Engineer working as an independent contractor in the Energy Industry. Experienced with a variety of systems and processes, from gas turbines controls and electrical substation automation to SIL based security systems.<br></br><br></br>
 					Former employee of Telvent / Schneider Electric in the Energy Dept., I am an expert in OASyS DNA SCADA, including ADMS and Liquid Management Systems. For the last 6 years I worked as an independent contractor specialized in power generation projects. <br></br><br></br>
 					Also, I am a proud ISO certified CAT II Vibration Analyst. A very good asset when commissioning gas turbines, generators and overall in the Oil & Gas Industry.
 				</p>
@@ -240,60 +261,15 @@ function Home() {
 			<p className={css(style.line)}></p>
 			<h2 className={css(style.subtitle)}>Customers</h2>
 			<div className={css(style.customers)}>
-				<Customers 
-					src={snamLogo} 
-					alt="snam logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={schneiderLogo} 
-					alt="schneider logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={gazDeFranceLogo} 
-					alt="gaz de france logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={petroamazonasLogo} 
-					alt="petroamazonas logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={repsolLogo} 
-					alt="repsol logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={pemexLogo} 
-					alt="pemex logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={petroecuadorLogo} 
-					alt="petroecuador logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={powerchinaLogo} 
-					alt="powerchina logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={desfaLogo} 
-					alt="desfa logo"
-					className={css(style.costumersLogo)}
-				/>
-				<Customers 
-					src={epmapsLogo} 
-					alt="epmaps logo"
-					className={css(style.costumersLogo)}
-				/>
+				{customerLogos.map((logo, index) => (
+					<React.Fragment key={index}>
+						{renderCustomerLogo(logo)}
+					</React.Fragment>
+				))}
 			</div>
 		</div>
 	)
-}
+});
 
 const style = StyleSheet.create({
 	solutionsSection: {
@@ -309,7 +285,7 @@ const style = StyleSheet.create({
 		color: '#1C3240',
 		fontWeight: '300',
 		paddingBottom: '30px',
-		fontFamily: `'Roboto', sans-serif`,
+		fontFamily: `'Inter', 'Arial', sans-serif`,
 		fontSize: '50px',
 		margin: '10px auto',
 		textTransform: 'uppercase',
@@ -352,7 +328,7 @@ const style = StyleSheet.create({
 		color: '#1C3240',
 		fontWeight: '300',
 		paddingBottom: '30px',
-		fontFamily: `'Roboto', sans-serif`,
+		fontFamily: `'Inter', 'Arial', sans-serif`,
 		fontSize: '30px',
 		width: '70%',
 		margin: '60px auto',
@@ -364,7 +340,7 @@ const style = StyleSheet.create({
 		width: '60%',
 		lineHeight: '30px',
 		fontSize: '16px',
-		fontFamily: `'Roboto', sans-serif`,
+		fontFamily: `'Source Sans Pro', 'Arial', sans-serif`,
 		'@media only screen and (max-width: 600px)': {
 			width: '100%',
 			fontSize: '18px',
@@ -386,8 +362,8 @@ const style = StyleSheet.create({
 	},
 	title: {
 		fontSize: '14px',
-		fontFamily: `'Roboto', sans-serif`,
-		fontWeight: '400',
+		fontFamily: `'Inter', 'Arial', sans-serif`,
+		fontWeight: '500',
 		color: '#031940',
 		textAlign: 'center',
 		'@media only screen and (max-width: 600px)': {

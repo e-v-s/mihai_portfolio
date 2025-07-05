@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
-function Header(props) {
+const Header = memo(function Header(props) {
 	return(
 		<>
 			<section className={css(style.header)}>
@@ -11,7 +11,7 @@ function Header(props) {
 			</section>
 		</>
 	)
-}
+});
 
 const style = StyleSheet.create({
 	header: {
