@@ -9,7 +9,6 @@ import About from './pages/about.js';
 import Contact from './pages/contact.js';
 import Solutions from './pages/solutions.js';
 import Home from './pages/home.js';
-import Customers from './pages/customers.js';
 import ErrorBoundary from './components/ErrorBoundary.js';
 import PerformanceMonitor from './components/PerformanceMonitor.js';
 
@@ -18,7 +17,8 @@ import burgerIconClose from './images/closeMenuBurger.png';
 
 function App() {
   const [contactModal, toggleContactModal] = useModali({
-    title: 'You can contact me via ...',
+    animated: true,
+    centered: true,
   });
   const [page, setPage] = useState('home');
   const [windowScroll, setWindowScroll] = useState(false);
@@ -82,11 +82,7 @@ function App() {
     window.scrollTo(0, 0);
   }, [handleClick]);
 
-  const handleCustomersClick = useCallback(() => {
-    setShowDropdown(false);
-    setPage('customers');
-    handleBurger();
-  }, [handleBurger]);
+
 
   const handleContactClick = useCallback(() => {
     setShowDropdown(false);
@@ -165,9 +161,7 @@ function App() {
     document.getElementById('sol_4').scrollIntoView({ block: "center", behavior: 'smooth' });
   }, [handleSolutionsType]);
 
-  const handleDesktopCustomersClick = useCallback(() => {
-    setPage('customers');
-  }, []);
+
 
   const handleDesktopContactClick = useCallback(() => {
     setShowDropdown(false);
@@ -187,8 +181,6 @@ function App() {
         return <About />;
       case 'solutions':
         return <Solutions />;
-      case 'customers':
-        return <Customers />;
       default:
         return <Home />;
     }
@@ -272,14 +264,7 @@ function App() {
                     </li>
                   </ul>
                 </li>
-                <li style={{marginBottom: '10px'}}>
-                  <a 
-                    className={css(style.links)} 
-                    onClick={handleCustomersClick}
-                  >
-                    Customers
-                  </a>
-                </li>
+
                 <li 
                   onClick={toggleContactModal} 
                   style={{marginBottom: '10px'}}
@@ -356,15 +341,7 @@ function App() {
                   </li>
                 </ul>
               </li>
-              <li>
-                <a 
-                  id='customers' 
-                  className={css(style.links)} 
-                  onClick={handleDesktopCustomersClick}
-                >
-                  Customers
-                </a>              
-              </li>
+
               <li onClick={toggleContactModal}>
                 <span 
                   className={css(style.links)} 
