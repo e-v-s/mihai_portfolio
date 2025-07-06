@@ -232,6 +232,7 @@ function App() {
                     onClick={handleSolutionsClick}
                   >
                     Solutions
+                    <span style={{ fontSize: '10px', marginLeft: '2px' }}>▼</span>
                   </a>
                   <ul className={ showDropdown ? css(style.dropdownMenu) : css(style.hideDropdownMenu)}>
                     <li 
@@ -297,7 +298,7 @@ function App() {
                   About me
                 </a>
               </li>
-              <li>
+              <li className={css(style.menuItem)}>
                 <a 
                   id='solutions' 
                   className={css(style.links)} 
@@ -306,6 +307,7 @@ function App() {
                   onMouseOut={handleDropdownMouseOut}
                 >
                   Solutions
+                  <span style={{ fontSize: '10px', marginLeft: '2px' }}>▼</span>
                 </a>              
                 <ul 
                   onMouseOver={handleDropdownMouseOver} 
@@ -368,6 +370,16 @@ function App() {
 }
 
 const style = StyleSheet.create ({
+  '@keyframes fadeIn': {
+    '0%': {
+      opacity: 0,
+      transform: 'translateY(-10px)',
+    },
+    '100%': {
+      opacity: 1,
+      transform: 'translateY(0)',
+    },
+  },
   header: {
     display: 'flex',
     justifyContent: 'space-around',
@@ -463,9 +475,13 @@ const style = StyleSheet.create ({
     display: 'flex',
     justifyContent: 'space-between',
     width: '50%',
+    position: 'relative',
     '@media only screen and (max-width: 600px)': {
       display: 'none',
     }
+  },
+  menuItem: {
+    position: 'relative',
   },
   mobileMenu: {
     display: 'none',
@@ -502,6 +518,9 @@ const style = StyleSheet.create ({
     fontFamily: `'Inter', 'Arial', sans-serif`,
     fontWeight: '600',
     cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '4px',
     ':hover': {
       textDecoration: 'underline',
     },
@@ -517,21 +536,34 @@ const style = StyleSheet.create ({
   },
   dropdownMenu: {
     position: 'absolute',
-    padding: '0',
+    top: '100%',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    padding: '8px 0',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    zIndex: '1',
+    zIndex: '1000',
     listStyle: 'none',
-    backgroundColor: '#1C3240',
-    borderRadius: '2px',
-    color: '#D7D7D9',
-    fontFamily: `'Source Sans Pro', 'Arial', sans-serif`,
-    fontWeight: '400',
-    lineHeight: '30px',
-    fontSize: '15px',
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    color: '#011140',
+    fontFamily: `'Inter', 'Arial', sans-serif`,
+    fontWeight: '500',
+    fontSize: '14px',
+    minWidth: '220px',
+    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
+    border: '1px solid rgba(1, 17, 64, 0.1)',
+    animation: 'fadeIn 0.2s ease-out',
     '@media only screen and (max-width: 600px)': {
-      backgroundColor: '#1C3240',
+      backgroundColor: '#fff',
+      position: 'static',
+      boxShadow: 'none',
+      border: 'none',
+      marginTop: '8px',
+      marginLeft: '20px',
+      minWidth: 'auto',
+      transform: 'none',
     }
   },
   hideDropdownMenu: {
@@ -539,10 +571,25 @@ const style = StyleSheet.create ({
   },
   linksDropdown: {
     cursor: 'pointer',
-    padding: '5px 5px 0 10px',
+    padding: '12px 16px',
+    transition: 'all 0.2s ease',
+    borderBottom: '1px solid rgba(1, 17, 64, 0.05)',
     ':hover': {
-      background: '#D7D7D9',
-      color: '#1C3240',
+      background: 'linear-gradient(135deg, #011140 0%, #405B73 100%)',
+      color: '#fff',
+      transform: 'translateX(4px)',
+    },
+    ':last-child': {
+      borderBottom: 'none',
+    },
+    '@media only screen and (max-width: 600px)': {
+      padding: '8px 12px',
+      fontSize: '16px',
+      ':hover': {
+        background: 'rgba(1, 17, 64, 0.1)',
+        color: '#011140',
+        transform: 'none',
+      },
     }
   },
   whitespace: {
