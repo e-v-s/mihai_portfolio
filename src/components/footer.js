@@ -17,10 +17,6 @@ const Footer = memo(function Footer(props) {
 		props.typePage('solutions');
 	}, [props.typePage]);
 
-	const handleCustomersClick = useCallback(() => {
-		props.typePage('customers');
-	}, [props.typePage]);
-
 	return (
 		<>
 		<div className={css(style.footer)}>
@@ -37,7 +33,6 @@ const Footer = memo(function Footer(props) {
 						<li className={css(style.subLink)} style={{paddingBottom: '0'}}>Vibration Analysis</li>
 					</ul>
 				</li>
-				<li className={css(style.link)} onClick={handleCustomersClick}>Customers</li>
 				<li onClick={props.modal.toggleContactModal}>
               <span 
                 className={css(style.link)} 
